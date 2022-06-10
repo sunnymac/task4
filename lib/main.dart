@@ -57,9 +57,9 @@ class _MyAppState extends State<MyApp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-Container(
-  child: Row(
-    children: [
+      Container(
+      child: Row(
+        children: [
          GestureDetector(
            onTap: (){
              setState(() {
@@ -70,29 +70,29 @@ Container(
            child: Image.asset("assets/images/heart.png",  height: 30,)),
                 SizedBox(width: 5,),
                 Text("$like Likes"),
-    ],
-  ),
-),
-Container(
-  child: Row(
-    children: [
+        ],
+      ),
+      ),
+      Container(
+      child: Row(
+        children: [
          InkWell(
            onTap: (){
              setState(() {
                commnets++;
              });
-
+      
            },
            child: Image.asset("assets/images/chat.png",  height: 30,)),
                 SizedBox(width: 5,),
                 Text("$commnets Comments"),
-    ],
-  ),
-),
-    
-    Container(
-  child: Row(
-    children: [
+        ],
+      ),
+      ),
+        
+        Container(
+      child: Row(
+        children: [
          InkWell(
            onTap: (){
              setState(() {
@@ -103,10 +103,10 @@ Container(
            child: Image.asset("assets/images/send.png",  height: 30,)),
                 SizedBox(width: 5,),
                 Text("$share Share"),
-    ],
-  ),
-),
-    
+        ],
+      ),
+      ),
+        
                
                
               ],
