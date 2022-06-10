@@ -4,10 +4,17 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
- 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int like = 0;
+  int commnets=0;
+  int share = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,18 +60,32 @@ class MyApp extends StatelessWidget {
 Container(
   child: Row(
     children: [
-         Image.asset("assets/images/heart.png",  height: 30,),
+         GestureDetector(
+           onTap: (){
+             setState(() {
+                like++;
+             });
+            
+           },
+           child: Image.asset("assets/images/heart.png",  height: 30,)),
                 SizedBox(width: 5,),
-                Text("Likes"),
+                Text("$like Likes"),
     ],
   ),
 ),
 Container(
   child: Row(
     children: [
-         Image.asset("assets/images/chat.png",  height: 30,),
+         InkWell(
+           onTap: (){
+             setState(() {
+               commnets++;
+             });
+
+           },
+           child: Image.asset("assets/images/chat.png",  height: 30,)),
                 SizedBox(width: 5,),
-                Text("Comments"),
+                Text("$commnets Comments"),
     ],
   ),
 ),
@@ -72,9 +93,16 @@ Container(
     Container(
   child: Row(
     children: [
-         Image.asset("assets/images/send.png",  height: 30,),
+         InkWell(
+           onTap: (){
+             setState(() {
+                share++;
+             });
+            
+           },
+           child: Image.asset("assets/images/send.png",  height: 30,)),
                 SizedBox(width: 5,),
-                Text("Share"),
+                Text("$share Share"),
     ],
   ),
 ),
